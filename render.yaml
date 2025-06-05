@@ -5,3 +5,5 @@ services:
     buildCommand: ""
     startCommand: "python main.py"
     plan: free
+    autoDeploy: true
+    envVars: []
