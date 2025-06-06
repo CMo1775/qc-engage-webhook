@@ -6,10 +6,10 @@ import os
 
 app = Flask(__name__)
 
-# Set your OpenAI API key
-openai.api_key = os.getenv("OPENAI_API_KEY")  # Set in Render Environment Variables
+# Set your OpenAI API key (in Render environment settings)
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# Load function schema (manually inserted or imported)
+# Define the function schema
 function_schema = [
     {
         "name": "quota_crusher_engage",
@@ -53,6 +53,7 @@ def enrich():
         function_args_str = response['choices'][0]['message']['function_call']['arguments']
         parsed_args = json.loads(function_args_str)
 
+        # ✅ This returns a flat object directly to Zapier
         return jsonify(parsed_args)
 
     except Exception as e:
