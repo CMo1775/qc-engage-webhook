@@ -1,27 +1,63 @@
+
+from flask import Flask, request, jsonify
 import openai
 import json
-from flask import Flask, request, jsonify
+import os
 
 app = Flask(__name__)
 
+# Set your OpenAI API key
+openai.api_key = os.getenv("OPENAI_API_KEY")  # Set in Render Environment Variables
+
+# Load function schema (manually inserted or imported)
+function_schema = [
+    {
+        "name": "quota_crusher_engage",
+        "description": "Full company enrichment for Dayforce HCM using Quota Crusher Engage pipeline.",
+        "parameters": {
+            "type": "object",
+            "required": ["Account Owner", "Account ID (18 Char)", "SFDC Account Name", "Website", "QC Engage Status", "Last QC Engage Date", "GPT Summary Narrative"],
+            "properties": {
+                "Account Owner": {"type": "string"},
+                "Account ID (18 Char)": {"type": "string"},
+                "SFDC Account Name": {"type": "string"},
+                "Website": {"type": "string"},
+                "QC Engage Status": {"type": "string"},
+                "Last QC Engage Date": {"type": "string"},
+                "GPT Summary Narrative": {"type": "string"}
+            },
+            "additionalProperties": True
+        }
+    }
+]
+
 @app.route("/enrich", methods=["POST"])
 def enrich():
-    data = request.json
+    data = request.get_json()
 
-    # Send to OpenAI
-    response = openai.ChatCompletion.create(
-        model="gpt-4-0613",
-        messages=[{
+    messages = [
+        {
             "role": "user",
-            "content": f"Run quota_crusher_engage for {data['company_name']} at {data['website']}."
-        }],
-        functions=[YOUR_FUNCTION_SCHEMA_HERE],
-        function_call={"name": "quota_crusher_engage"}
-    )
+            "content": f"Run quota_crusher_engage for {data['SFDC Account Name']} at {data['Website']}"
+        }
+    ]
 
-    # Parse the flat JSON from function call
-    function_args_str = response['choices'][0]['message']['function_call']['arguments']
-    parsed_output = json.loads(function_args_str)
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-4-0613",
+            messages=messages,
+            functions=function_schema,
+            function_call={"name": "quota_crusher_engage"}
+        )
 
-    # ✅ Return the parsed object directly so Zapier can read all fields
-    return jsonify(parsed_output)
+        function_args_str = response['choices'][0]['message']['function_call']['arguments']
+        parsed_args = json.loads(function_args_str)
+
+        return jsonify(parsed_args)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=5000)
+
