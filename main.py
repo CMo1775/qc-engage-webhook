@@ -35,10 +35,21 @@ function_schema = [
 def enrich():
     data = request.get_json()
 
+    # Map Zapier input to schema keys
+    mapped_input = {
+        "Account Owner": data.get("account_owner", "Unknown"),
+        "Account ID (18 Char)": data.get("account_id", "Unknown"),
+        "SFDC Account Name": data.get("company_name", "Unknown"),
+        "Website": data.get("website", "Unknown"),
+        "QC Engage Status": "Active",
+        "Last QC Engage Date": "2025-06-06",
+        "GPT Summary Narrative": ""  # Will be filled by OpenAI
+    }
+
     messages = [
         {
             "role": "user",
-            "content": f"Run quota_crusher_engage for {data['SFDC Account Name']} at {data['Website']}"
+            "content": f"Run quota_crusher_engage for {mapped_input['SFDC Account Name']} at {mapped_input['Website']}"
         }
     ]
 
@@ -53,7 +64,9 @@ def enrich():
         function_args_str = response['choices'][0]['message']['function_call']['arguments']
         parsed_args = json.loads(function_args_str)
 
-        # ✅ This returns a flat object directly to Zapier
+        # Merge mapped input into parsed_args to complete required fields
+        parsed_args.update(mapped_input)
+
         return jsonify(parsed_args)
 
     except Exception as e:
