@@ -28,12 +28,18 @@ def enrich():
                 {
                     "name": "enrichEngageRow",
                     "description": "Returns company metadata for Engage enrichment",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "flex_fit_score": {"type": "string"},
-                            "dayfit_score": {"type": "string"},
-                            "current_hcm": {"type": "string"},
-                            "gpt_summary_narrative": {"type": "string"}
-                        },
-                        "required": ["flex_fit_score", "dayfit_scor_]()
+                  "parameters": {
+  "type": "object",
+  "properties": {
+    "flex_fit_score": {"type": "string"},
+    "dayfit_score": {"type": "string"},
+    "current_hcm": {"type": "string"},
+    "gpt_summary_narrative": {"type": "string"}
+  },
+  "required": [
+    "flex_fit_score",
+    "dayfit_score",
+    "current_hcm",
+    "gpt_summary_narrative"
+  ]
+}
