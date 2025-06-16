@@ -17,7 +17,7 @@ def enrich():
         website = data.get("website", "Unknown")
 
         response = openai.ChatCompletion.create(
-            model="gpt-4-0613",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are Quota Crusher Engage. Return all metadata fields required for enrichment."},
                 {"role": "user", "content": f"Enrich the following company: {company_name} ({website}) for account owner {account_owner} with SFDC ID {account_id}."}
@@ -47,13 +47,13 @@ def enrich():
         )
 
         output = response.choices[0].message.get("function_call", {}).get("arguments", "{}")
-        print("GPT function response:", output)
-
         import json
         result = json.loads(output)
+        print("GPT function response:", result)
 
         return jsonify(result)
 
     except Exception as e:
         print("ENRICH ERROR:", str(e))
         return jsonify({"error": str(e)}), 500
+
