@@ -47,11 +47,17 @@ def enrich():
             function_call={"name": "enrichEngageRow"}
         )
 
-        output = response.choices[0].message.get("function_call", {}).get("arguments", "{}")
-        result = json.loads(output)
+output = response.choices[0].message.get("function_call", {}).get("arguments", "{}")
+print("Raw GPT function response string:", output)
 
-        print("GPT function response:", result)
-        return jsonify(result)
+try:
+    result = json.loads(output)
+    print("Parsed result:", result)
+    return jsonify(result)
+except Exception as e:
+    print("JSON parsing error:", str(e))
+    return jsonify({"error": "Failed to parse GPT response", "raw_output": output}), 500
+
 
     except Exception as e:
         print("ENRICH ERROR:", str(e))
