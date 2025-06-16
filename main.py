@@ -1,4 +1,5 @@
 import os
+import json
 import openai
 from flask import Flask, request, jsonify
 
@@ -47,16 +48,14 @@ def enrich():
         )
 
         output = response.choices[0].message.get("function_call", {}).get("arguments", "{}")
-        import json
         result = json.loads(output)
-        print("GPT function response:", result)
 
+        print("GPT function response:", result)
         return jsonify(result)
 
     except Exception as e:
         print("ENRICH ERROR:", str(e))
         return jsonify({"error": str(e)}), 500
-        if __name__ == "__main__":
-        app.run(host="0.0.0.0", port=5000)
 
-
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
