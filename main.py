@@ -9,7 +9,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 @app.route("/enrich", methods=["POST"])
 def enrich():
     try:
-        data = request.json(force=True)
+        data = request..get_json(force=True)
         print("Incoming data:", data)
 
         account_owner = data.get("account_owner", "Unknown")
