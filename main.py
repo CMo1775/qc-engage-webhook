@@ -20,8 +20,14 @@ def enrich():
         response = openai.ChatCompletion.create(
             model="gpt-4o",
             messages=[
-                {"role": "system", "content": "You are Quota Crusher Engage. Return all metadata fields required for enrichment."},
-                {"role": "user", "content": f"Enrich the following company: {company_name} ({website}) for account owner {account_owner} with SFDC ID {account_id}."}
+                {
+                    "role": "system",
+                    "content": "You are Quota Crusher Engage. Return all metadata fields required for enrichment."
+                },
+                {
+                    "role": "user",
+                    "content": f"Enrich the following company: {company_name} ({website}) for account owner {account_owner} with SFDC ID {account_id}."
+                }
             ],
             functions=[
                 {
@@ -47,17 +53,13 @@ def enrich():
             function_call={"name": "enrichEngageRow"}
         )
 
-output = response.choices[0].message.get("function_call", {}).get("arguments", "{}")
-print("Raw GPT function response string:", output)
+        output = response.choices[0].message.get("function_call", {}).get("arguments", "{}")
+        print("Raw GPT response:", output)
 
-try:
-    result = json.loads(output)
-    print("Parsed result:", result)
-    return jsonify(result)
-except Exception as e:
-    print("JSON parsing error:", str(e))
-    return jsonify({"error": "Failed to parse GPT response", "raw_output": output}), 500
+        result = json.loads(output)
+        print("Parsed result:", result)
 
+        return jsonify(result)
 
     except Exception as e:
         print("ENRICH ERROR:", str(e))
