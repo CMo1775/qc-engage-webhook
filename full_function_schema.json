@@ -1,0 +1,571 @@
+{
+  "name": "enrichEngageRow",
+  "description": "Returns company metadata for Engage enrichment",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "Account Owner": {
+        "type": "string"
+      },
+      "Account ID (18 Char)": {
+        "type": "string"
+      },
+      "SFDC Account Name": {
+        "type": "string"
+      },
+      "Website": {
+        "type": "string"
+      },
+      "Common Name": {
+        "type": "string"
+      },
+      "Enrichment Status": {
+        "type": "string"
+      },
+      "Last Enrichment Date": {
+        "type": "string"
+      },
+      "LinkedIn Company URL": {
+        "type": "string"
+      },
+      "Segment": {
+        "type": "string"
+      },
+      "Sub-Industry": {
+        "type": "string"
+      },
+      "NAICS Code": {
+        "type": "string"
+      },
+      "Employee Size": {
+        "type": "string"
+      },
+      "Revenue (Est.)": {
+        "type": "string"
+      },
+      "Global Headquarters ": {
+        "type": "string"
+      },
+      "US Headquarters": {
+        "type": "string"
+      },
+      "US Headquarters Address Line 1": {
+        "type": "string"
+      },
+      "US Headquarters Address Line 2": {
+        "type": "string"
+      },
+      "US HQ City, State, Zipcode": {
+        "type": "string"
+      },
+      "Current HCM": {
+        "type": "string"
+      },
+      "Current HCM Vendor Source": {
+        "type": "string"
+      },
+      "HCM Vendor Confidence": {
+        "type": "string"
+      },
+      "HCM Contract Expiration": {
+        "type": "string"
+      },
+      "Current Payroll": {
+        "type": "string"
+      },
+      "Current Payroll Vendor Source": {
+        "type": "string"
+      },
+      "Payroll Vendor Confidence": {
+        "type": "string"
+      },
+      "Payroll Contract Expiration": {
+        "type": "string"
+      },
+      "Current WFM": {
+        "type": "string"
+      },
+      "Current WFM Vendor Source": {
+        "type": "string"
+      },
+      "WFM Confidence": {
+        "type": "string"
+      },
+      "Current ATS": {
+        "type": "string"
+      },
+      "Current ATS Vendor Source": {
+        "type": "string"
+      },
+      "ATS Detected (via career site pattern)": {
+        "type": "string"
+      },
+      "Current Learning System": {
+        "type": "string"
+      },
+      "Learning Vendor": {
+        "type": "string"
+      },
+      "Current ERP": {
+        "type": "string"
+      },
+      "Current ERP Vendor Source": {
+        "type": "string"
+      },
+      "ERP Confidence": {
+        "type": "string"
+      },
+      "ERP Contract Expiration": {
+        "type": "string"
+      },
+      "Union Complexity": {
+        "type": "string"
+      },
+      "Tech Modernization Signal": {
+        "type": "string"
+      },
+      "Strategic Industry Alignment": {
+        "type": "string"
+      },
+      "Org Size Fit": {
+        "type": "string"
+      },
+      "Flex Fit": {
+        "type": "string"
+      },
+      "Flex Fit Rationale": {
+        "type": "string"
+      },
+      "Union Presence (Y/N)": {
+        "type": "string"
+      },
+      "Number of Unions": {
+        "type": "string"
+      },
+      "Known Unions": {
+        "type": "string"
+      },
+      "Native Payroll Markets": {
+        "type": "string"
+      },
+      "Payroll Complexity": {
+        "type": "string"
+      },
+      "Global Payroll Alignment": {
+        "type": "string"
+      },
+      "States of Operation": {
+        "type": "string"
+      },
+      "High-Risk States": {
+        "type": "string"
+      },
+      "State-Level Compliance Risks": {
+        "type": "string"
+      },
+      "International HR Risk Notes": {
+        "type": "string"
+      },
+      "10-K Labor Mentions": {
+        "type": "string"
+      },
+      "ESG/DEI Commentary": {
+        "type": "string"
+      },
+      "Tech Modernization Plans": {
+        "type": "string"
+      },
+      "Strategic Goals": {
+        "type": "string"
+      },
+      "Public RFP or Procurement Mentions": {
+        "type": "string"
+      },
+      "Recent M&A or CEO Vision Highlights": {
+        "type": "string"
+      },
+      "AI/Analytics Investment Signals": {
+        "type": "string"
+      },
+      "Peer System Benchmark Summary": {
+        "type": "string"
+      },
+      "Known Dayforce Wins (Peer Logos)": {
+        "type": "string"
+      },
+      "Research Status": {
+        "type": "string"
+      },
+      "Notes": {
+        "type": "string"
+      },
+      "Most Recent 10K": {
+        "type": "string"
+      },
+      "10-K 1 Labor & Workforce Findings": {
+        "type": "string"
+      },
+      "10-K 1 Human Capital Strategy Findings": {
+        "type": "string"
+      },
+      "10-K 1 Payroll Complexity Signals": {
+        "type": "string"
+      },
+      "10-K 1 Tech Modernization Insights": {
+        "type": "string"
+      },
+      "10-K 1 M&A/CEO Strategy Summary": {
+        "type": "string"
+      },
+      "10-K Year 2": {
+        "type": "string"
+      },
+      "10-K 2 Labor & Workforce Findings": {
+        "type": "string"
+      },
+      "10-K 2 Human Capital Strategy Findings": {
+        "type": "string"
+      },
+      "10-K 2 Payroll Complexity Signals": {
+        "type": "string"
+      },
+      "10-K 2 Tech Modernization Insights": {
+        "type": "string"
+      },
+      "10-K 2 M&A/CEO Strategy Summary": {
+        "type": "string"
+      },
+      "10-K Year 3": {
+        "type": "string"
+      },
+      "10-K 3 Labor & Workforce Findings": {
+        "type": "string"
+      },
+      "10-K 3 Human Capital Strategy Findings": {
+        "type": "string"
+      },
+      "10-K 3 Payroll Complexity Signals": {
+        "type": "string"
+      },
+      "10-K 3 Tech Modernization Insights": {
+        "type": "string"
+      },
+      "10-K 3 M&A/CEO Strategy Summary": {
+        "type": "string"
+      },
+      "10-K Year 4": {
+        "type": "string"
+      },
+      "10-K 4 Labor & Workforce Findings": {
+        "type": "string"
+      },
+      "10-K 4 Human Capital Strategy Findings": {
+        "type": "string"
+      },
+      "10-K 4 Payroll Complexity Signals": {
+        "type": "string"
+      },
+      "10-K 4 Tech Modernization Insights": {
+        "type": "string"
+      },
+      "10-K 4 M&A/CEO Strategy Summary": {
+        "type": "string"
+      },
+      "10-K Year 5": {
+        "type": "string"
+      },
+      "10-K 5 Labor & Workforce Findings": {
+        "type": "string"
+      },
+      "10-K 5 Human Capital Strategy Findings": {
+        "type": "string"
+      },
+      "10-K 5 Payroll Complexity Signals": {
+        "type": "string"
+      },
+      "10-K 5 Tech Modernization Insights": {
+        "type": "string"
+      },
+      "10-K 5 M&A/CEO Strategy Summary": {
+        "type": "string"
+      },
+      "AppsRunTheWorld Match": {
+        "type": "string"
+      },
+      "AppsRunTheWorld Logic": {
+        "type": "string"
+      },
+      "SoftwareAdvice Match": {
+        "type": "string"
+      },
+      "SoftwareAdvice Logic": {
+        "type": "string"
+      },
+      "Capterra Match": {
+        "type": "string"
+      },
+      "Capterra Logic": {
+        "type": "string"
+      },
+      "G2 Match": {
+        "type": "string"
+      },
+      "G2 Logic": {
+        "type": "string"
+      },
+      "TrustRadius Match": {
+        "type": "string"
+      },
+      "TrustRadius Logic": {
+        "type": "string"
+      },
+      "CB Insights Match": {
+        "type": "string"
+      },
+      "CB Insights Logic": {
+        "type": "string"
+      },
+      "Crunchbase Match": {
+        "type": "string"
+      },
+      "Crunchbase Logic": {
+        "type": "string"
+      },
+      "Gartner Peer Insights Match": {
+        "type": "string"
+      },
+      "Gartner Peer Insights Logic": {
+        "type": "string"
+      },
+      "Celent/VendorMatch Match": {
+        "type": "string"
+      },
+      "Celent/VendorMatch Logic": {
+        "type": "string"
+      },
+      "AppsRunTheWorld HCM Findings": {
+        "type": "string"
+      },
+      "AppsRunTheWorld Payroll Findings": {
+        "type": "string"
+      },
+      "AppsRunTheWorld WFM Findings": {
+        "type": "string"
+      },
+      "SoftwareAdvice HCM Findings": {
+        "type": "string"
+      },
+      "SoftwareAdvice Payroll Findings": {
+        "type": "string"
+      },
+      "SoftwareAdvice WFM Findings": {
+        "type": "string"
+      },
+      "Capterra HCM Findings": {
+        "type": "string"
+      },
+      "Capterra Payroll Findings": {
+        "type": "string"
+      },
+      "Capterra WFM Findings": {
+        "type": "string"
+      },
+      "G2 HCM Findings": {
+        "type": "string"
+      },
+      "G2 Payroll Findings": {
+        "type": "string"
+      },
+      "G2 WFM Findings": {
+        "type": "string"
+      },
+      "TrustRadius HCM Findings": {
+        "type": "string"
+      },
+      "TrustRadius Payroll Findings": {
+        "type": "string"
+      },
+      "TrustRadius WFM Findings": {
+        "type": "string"
+      },
+      "CB Insights HCM Findings": {
+        "type": "string"
+      },
+      "CB Insights Payroll Findings": {
+        "type": "string"
+      },
+      "CB Insights WFM Findings": {
+        "type": "string"
+      },
+      "Crunchbase HCM Findings": {
+        "type": "string"
+      },
+      "Crunchbase Payroll Findings": {
+        "type": "string"
+      },
+      "Crunchbase WFM Findings": {
+        "type": "string"
+      },
+      "Gartner Peer Insights HCM Findings": {
+        "type": "string"
+      },
+      "Gartner Peer Insights Payroll Findings": {
+        "type": "string"
+      },
+      "Gartner Peer Insights WFM Findings": {
+        "type": "string"
+      },
+      "Celent/VendorMatch HCM Findings": {
+        "type": "string"
+      },
+      "Celent/VendorMatch Payroll Findings": {
+        "type": "string"
+      },
+      "Celent/VendorMatch WFM Findings": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "Account Owner",
+      "Account ID (18 Char)",
+      "SFDC Account Name",
+      "Website",
+      "Common Name",
+      "Enrichment Status",
+      "Last Enrichment Date",
+      "LinkedIn Company URL",
+      "Segment",
+      "Sub-Industry",
+      "NAICS Code",
+      "Employee Size",
+      "Revenue (Est.)",
+      "Global Headquarters ",
+      "US Headquarters",
+      "US Headquarters Address Line 1",
+      "US Headquarters Address Line 2",
+      "US HQ City, State, Zipcode",
+      "Current HCM",
+      "Current HCM Vendor Source",
+      "HCM Vendor Confidence",
+      "HCM Contract Expiration",
+      "Current Payroll",
+      "Current Payroll Vendor Source",
+      "Payroll Vendor Confidence",
+      "Payroll Contract Expiration",
+      "Current WFM",
+      "Current WFM Vendor Source",
+      "WFM Confidence",
+      "Current ATS",
+      "Current ATS Vendor Source",
+      "ATS Detected (via career site pattern)",
+      "Current Learning System",
+      "Learning Vendor",
+      "Current ERP",
+      "Current ERP Vendor Source",
+      "ERP Confidence",
+      "ERP Contract Expiration",
+      "Union Complexity",
+      "Tech Modernization Signal",
+      "Strategic Industry Alignment",
+      "Org Size Fit",
+      "Flex Fit",
+      "Flex Fit Rationale",
+      "Union Presence (Y/N)",
+      "Number of Unions",
+      "Known Unions",
+      "Native Payroll Markets",
+      "Payroll Complexity",
+      "Global Payroll Alignment",
+      "States of Operation",
+      "High-Risk States",
+      "State-Level Compliance Risks",
+      "International HR Risk Notes",
+      "10-K Labor Mentions",
+      "ESG/DEI Commentary",
+      "Tech Modernization Plans",
+      "Strategic Goals",
+      "Public RFP or Procurement Mentions",
+      "Recent M&A or CEO Vision Highlights",
+      "AI/Analytics Investment Signals",
+      "Peer System Benchmark Summary",
+      "Known Dayforce Wins (Peer Logos)",
+      "Research Status",
+      "Notes",
+      "Most Recent 10K",
+      "10-K 1 Labor & Workforce Findings",
+      "10-K 1 Human Capital Strategy Findings",
+      "10-K 1 Payroll Complexity Signals",
+      "10-K 1 Tech Modernization Insights",
+      "10-K 1 M&A/CEO Strategy Summary",
+      "10-K Year 2",
+      "10-K 2 Labor & Workforce Findings",
+      "10-K 2 Human Capital Strategy Findings",
+      "10-K 2 Payroll Complexity Signals",
+      "10-K 2 Tech Modernization Insights",
+      "10-K 2 M&A/CEO Strategy Summary",
+      "10-K Year 3",
+      "10-K 3 Labor & Workforce Findings",
+      "10-K 3 Human Capital Strategy Findings",
+      "10-K 3 Payroll Complexity Signals",
+      "10-K 3 Tech Modernization Insights",
+      "10-K 3 M&A/CEO Strategy Summary",
+      "10-K Year 4",
+      "10-K 4 Labor & Workforce Findings",
+      "10-K 4 Human Capital Strategy Findings",
+      "10-K 4 Payroll Complexity Signals",
+      "10-K 4 Tech Modernization Insights",
+      "10-K 4 M&A/CEO Strategy Summary",
+      "10-K Year 5",
+      "10-K 5 Labor & Workforce Findings",
+      "10-K 5 Human Capital Strategy Findings",
+      "10-K 5 Payroll Complexity Signals",
+      "10-K 5 Tech Modernization Insights",
+      "10-K 5 M&A/CEO Strategy Summary",
+      "AppsRunTheWorld Match",
+      "AppsRunTheWorld Logic",
+      "SoftwareAdvice Match",
+      "SoftwareAdvice Logic",
+      "Capterra Match",
+      "Capterra Logic",
+      "G2 Match",
+      "G2 Logic",
+      "TrustRadius Match",
+      "TrustRadius Logic",
+      "CB Insights Match",
+      "CB Insights Logic",
+      "Crunchbase Match",
+      "Crunchbase Logic",
+      "Gartner Peer Insights Match",
+      "Gartner Peer Insights Logic",
+      "Celent/VendorMatch Match",
+      "Celent/VendorMatch Logic",
+      "AppsRunTheWorld HCM Findings",
+      "AppsRunTheWorld Payroll Findings",
+      "AppsRunTheWorld WFM Findings",
+      "SoftwareAdvice HCM Findings",
+      "SoftwareAdvice Payroll Findings",
+      "SoftwareAdvice WFM Findings",
+      "Capterra HCM Findings",
+      "Capterra Payroll Findings",
+      "Capterra WFM Findings",
+      "G2 HCM Findings",
+      "G2 Payroll Findings",
+      "G2 WFM Findings",
+      "TrustRadius HCM Findings",
+      "TrustRadius Payroll Findings",
+      "TrustRadius WFM Findings",
+      "CB Insights HCM Findings",
+      "CB Insights Payroll Findings",
+      "CB Insights WFM Findings",
+      "Crunchbase HCM Findings",
+      "Crunchbase Payroll Findings",
+      "Crunchbase WFM Findings",
+      "Gartner Peer Insights HCM Findings",
+      "Gartner Peer Insights Payroll Findings",
+      "Gartner Peer Insights WFM Findings",
+      "Celent/VendorMatch HCM Findings",
+      "Celent/VendorMatch Payroll Findings",
+      "Celent/VendorMatch WFM Findings"
+    ]
+  }
+}
